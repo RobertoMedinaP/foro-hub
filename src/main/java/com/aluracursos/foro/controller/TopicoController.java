@@ -1,6 +1,8 @@
 package com.aluracursos.foro.controller;
 
 import com.aluracursos.foro.domain.topico.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,8 +19,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/topicos")
-//@SecurityRequirement(name = "bearer-key")
-//@Tag(name = "Tópico", description = "Operaciones de gestión de tópicos") revisar doc
+@SecurityRequirement(name = "bearer-key")
+@Tag(name = "Tópico", description = "Operaciones de gestión de tópicos") //revisar doc
 public class TopicoController {
     @Autowired
     private TopicoService topicoService;

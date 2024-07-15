@@ -1,6 +1,8 @@
 package com.aluracursos.foro.controller;
 
 import com.aluracursos.foro.domain.usuarios.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +16,8 @@ import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/usuarios")
-//@SecurityRequirement(name = "bearer-key")
-//@Tag(name = "Usuario", description = "Operaciones de gestión de usuarios")
+@SecurityRequirement(name = "bearer-key")
+@Tag(name = "Usuario", description = "Operaciones de gestión de usuarios")
 public class UsuarioController {
     @Autowired
     private UsuarioRepository usuarioRepository;

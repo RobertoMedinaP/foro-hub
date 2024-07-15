@@ -1,6 +1,8 @@
 package com.aluracursos.foro.controller;
 
 import com.aluracursos.foro.domain.respuesta.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +19,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/respuestas")
-//@SecurityRequirement(name = "bearer-key") swagger
-//@Tag(name = "Respúesta", description = "Operaciones de gestión de respuesta") swagger
+@SecurityRequirement(name = "bearer-key") //swagger
+@Tag(name = "Respúesta", description = "Operaciones de gestión de respuesta") //swagger
 public class RespuestaController {
     @Autowired
     RespuestaService respuestaService;
